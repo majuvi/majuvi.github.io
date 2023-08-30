@@ -1,1 +1,264 @@
-Test
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <link
+        href="http://fonts.googleapis.com/css?family=Oswald:700"
+        rel="stylesheet"
+        type="text/css"
+    />
+    <meta charset="utf-8" />
+    <title>Markus Viljanen</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="css/styles.css" />
+ </head>
+ <body>
+    <header class="header">
+        <nav class="navbar">
+            <a class="navbar_home" href="index.html">Markus Viljanen</a>
+            <a class="navbar_link navbar_chosen" href="research.html">Research</a>
+            <a class="navbar_link" href="projects.html">Projects</a>
+            <a class="navbar_link" href="blog/">Blog</a>
+            <a class="navbar_img" href="https://linkedin.com">
+                <svg class="svg-icon" width="2.5rem" height="2.5rem" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path d="M19.7,3H4.3C3.582,3,3,3.582,3,4.3v15.4C3,20.418,3.582,21,4.3,21h15.4c0.718,0,1.3-0.582,1.3-1.3V4.3 C21,3.582,20.418,3,19.7,3z M8.339,18.338H5.667v-8.59h2.672V18.338z M7.004,8.574c-0.857,0-1.549-0.694-1.549-1.548 c0-0.855,0.691-1.548,1.549-1.548c0.854,0,1.547,0.694,1.547,1.548C8.551,7.881,7.858,8.574,7.004,8.574z M18.339,18.338h-2.669 v-4.177c0-0.996-0.017-2.278-1.387-2.278c-1.389,0-1.601,1.086-1.601,2.206v4.249h-2.667v-8.59h2.559v1.174h0.037 c0.356-0.675,1.227-1.387,2.526-1.387c2.703,0,3.203,1.779,3.203,4.092V18.338z"></path>
+                </svg>
+            </a>
+
+        </nav>
+    
+    </header>
+    <main>
+
+        <section id="project_llperm" class="project">
+
+            <h1 class="project_title">llperm: a permutation of regressor residuals test for microbiome data </h1>
+            <figure>
+                <img class="project_img" src="img/permutation.png" alt="Standard p-values vs. permutation of regression residuals p-values"/>
+                <figcaption class="project_caption"> Figure: After a likelihood implied by a model has been specified, a p-value can be calculated using both a standard likehood-ratio test and a permutation of regressor residuals test. </figcaption>
+            </figure>
+            <p>
+                We implement an R package ‘llperm’ where the The Permutation of Regressor Residuals (PRR) test can be applied to any likelihood based model, not only generalized linear models. This enables distributions with zero-infation and overdispersion, making the test suitable for count regression models popular in microbiome data analysis. Simulations based on a real data set show that the PRR-test approach is able to maintain the correct nominal false positive rate expected from the null hypothesis, while having equal or greater power to detect the true positives as models based on likelihood at a given false positive rate. Standard count regression models can have a shockingly high false positive rate in microbiome data sets. As they may lead to false conclusions, the guaranteed nominal false positive rate gained from the PRR-test can be viewed as a major benefit.
+            </p>
+            <h2 class="project_subtitle">Software</h2>
+            <ul class="project_repos">
+                <li> <a href="https://github.com/majuvi/llperm"> <span class="project_repo">https://github.com/majuvi/llperm </span></a></li>
+            </ul>
+
+            <h2 class="project_subtitle">Vignette</h2>
+            <ul class="project_examples">
+             <li><a href="https://github.com/majuvi/llperm/blob/main/vignettes/introduction.Rmd"> introduction.Rmd </a> <span class="project_lang">R</span>
+                <p> Fit regression models to a real data set (VEGA subset) and use glmperm &amp; llperm to fix standard models. </p>
+             </li>
+             <li><a href="https://github.com/majuvi/llperm/blob/main/vignettes/introduction2.Rmd"> introduction2.Rmd </a> <span class="project_lang">R</span>
+                <p> Simulate Zero-Inflated Negative Binomial Data, showing standard models do well if assumptions are met. </p>
+             </li>
+            </ul>
+            <h2 class="project_subtitle">Related papers</h2>
+          <ol class="project_references">
+              <li>Viljanen, M., &amp; Boshuizen, H. (2022). llperm: a permutation of regressor residuals test for microbiome data. BMC bioinformatics, 23(1), 540. <a href="https://link.springer.com/article/10.1186/s12859-022-05088-w">link</a>.</li>
+          </ol>
+        </section>
+
+        <section id="project_smap" class="project">
+            <h1 class="project_title">Health, housing and well-being of the population of Netherlands
+            </h1>
+            <figure>
+                <img class="project_img" src="img/smap.png" alt="Maps of raw data and XGBoost predicted prevalences in the Netherlands"/>
+                <figcaption class="project_caption"> Figure: Importance of small area estimation illustrated by a comparison of maps: prevalence of "drank alcohol in the past 12 months" at neighbourhood level based
+                    on Health monitor survey responses (left) and XGBoost model predictions for the entire population (right). </figcaption>
+            </figure>
+            <p>
+                Small Area Estimation (SAE) is a technique to provide estimates at small geographical levels with only few or even zero respondents. In classical individual-level SAE, a complex statistical regression model is fitted to the survey responses by using auxiliary administrative data for the population as predictors, the missing responses are then predicted and aggregated to the desired geographical level. In this paper we compare gradient boosted trees (XGBoost), a well-known machine learning technique, to a structured additive regression model (STAR) designed for the specific problem of estimating public health and well-being in the whole population of the Netherlands. We demonstrate that machine learning provides a good alternative to complex statistical regression modelling for small area estimation in terms of accuracy, robustness, speed and data preparation. 
+            </p>
+            <h2 class="project_subtitle">Software</h2>
+            <ul class="project_repos">
+                <li> <a href="https://github.com/majuvi/smap-2020-paper"> <span class="project_repo">https://github.com/majuvi/smap-2020-paper </span></a></li>
+                <li> <a href="https://statline.rivm.nl/#/RIVM/nl/dataset/50090NED"> <span class="project_repo">RIVM statline (predictions)</span></a></li>
+            </ul>
+
+            <h2 class="project_subtitle">Vignette</h2>
+            <ul class="project_examples">
+             <li><a href="https://github.com/majuvi/SIM-ML-2022-tutorial/blob/master/SMAP/tutorial_simple_answers.Rmd"> tutorial_simple_answers.Rmd </a> <span class="project_lang">R</span>
+                <p> A simple tutorial to small area estimation using simulated data. We fit the STAR and XGBoost models, optimize the hyperparameters and use explainable machine learning to interpret the predictions. </p>
+             </li>
+            </ul>
+            <h2 class="project_subtitle">Related papers</h2>
+          <ol class="project_references">
+              <li>Viljanen, M., Meijerink, L., Zwakhals, L., &amp; van de Kassteele, J. (2022). A machine learning approach to small area estimation: predicting the health, housing and well-being of the population of Netherlands. International Journal of Health Geographics, 21(1), 4. <a href="https://link.springer.com/article/10.1186/s12942-022-00304-5">link</a>.</li>
+          </ol>
+        </section>
+
+        <section id="project_pairwise" class="project">
+            <h1 class="project_title">Generalized vec trick for fast learning of pairwise kernel models
+            </h1>
+            <figure>
+                <img class="project_img" src="img/kernels.png" alt="Kernel functions of different pairwise kernels"/>
+                <figcaption class="project_caption"> Figure: We show that all of these kernels can be expressed as a combination Kronecker products of a separate drug and target kernel. This enables fast training with the generalized the vec trick.</figcaption>
+            </figure>
+            <p>
+                Kernel methods are a popular way to learn non-linear models. Pairwise learning is a special case where the data consists pairs of objects, for example (drug, target)-pairs in biological interaction prediction. However, there are many applications where the number of pairs n is so large that it is infeasible to construct the kernel matrix, which is required for a direct application of kernel methods. It has been shown that in the special case of the Kronecker kernel, there is a computational shortcut called the 'vec trick' that overcomes this problem. A generalization when only some of the pairs are observed is the 'generalized vec trick'. In the paper, we show that the most popular pairwise kernels (Linear, Polynomial, Symmetric, Cartesian, Ranking, MLPK, etc.) can be expressed as sums of Kronecker kernels which means that the computational shortcut can be applied to them as well. The paper also includes four experiments in biological interaction prediction that demonstrate the utility of each kernel, because different kernels perform best depending on the application.
+            </p>
+            <h2 class="project_subtitle">Software</h2>
+            <ul class="project_repos">
+                <li> <a href="https://github.com/majuvi/pairwise_kernels"> <span class="project_repo">https://github.com/majuvi/pairwise_kernels</span></a> source code and data to run the experiments for our paper.</li>
+                <li> <a href="https://github.com/aatapa/RLScore"> <span class="project_repo">https://github.com/aatapa/RLScore</span></a> generalized vec trick is available as part of the RLScore package. </li>
+            </ul>
+
+            <h2 class="project_subtitle">Related papers</h2>
+          <ol class="project_references">
+              <li>Viljanen, M., Airola, A., &amp; Pahikkala, T. (2022). Generalized vec trick for fast learning of pairwise kernel models. Machine Learning, 111(2), 543-573. <a href="https://link.springer.com/article/10.1007/s10994-021-06127-y">link</a>.</li>
+          </ol>
+        </section>
+
+        <section id="project_mcf" class="project">
+
+            <h1 class="project_title">Measuring Retention And Monetization in Censored Data</h1>
+            <figure>
+                <img class="project_img" src="img/example.png" alt="MCF example where the mean number of purchases is estimated from censored data"/>
+                <figcaption class="project_caption"> Figure: Different follow-up times result in censored data (left), yet a statistical method can be used to estimate the mean number of purchases and other metrics without bias (right). </figcaption>
+            </figure>
+            <p>
+                Companies that develop digital products (games, apps, subscriptions, etc.) gather data from users, which is used to evaluate how well the product retains users and how much money it makes. Many different metrics have been developed for this purpose. The data gathering results in data sets that look like the figure on the left; they are censored because users have limited and often variable follow-up times. This presents a problem: how can we estimate these metric on censored data, especially the important ones like total product use or total profit made? The papers claim that a statistical framework built around a method called the Mean Cumulative Function (MCF) can solve this, which is implemented in my software package PyMCF. 
+            </p>
+            <h2 class="project_subtitle">Software</h2>
+            <ul class="project_repos">
+                <li> <a href="https://github.com/majuvi/pymcf"> <span class="project_repo">https://github.com/majuvi/pymcf </span></a></li>
+            </ul>
+
+            <h2 class="project_subtitle">Vignette</h2>
+            <ul class="project_examples">
+             <li><a href="https://github.com/majuvi/PyMCF/blob/master/tutorial_data.ipynb"> tutorial_data.ipynb </a> <span class="project_lang">Python</span>
+                <p>Retention and monetization data is a well kept secret of companies, so this file shows how to generate a simulated data set of sessions and purchases by sampling a simple stochastic process. </p>
+             </li>
+             <li><a href="https://github.com/majuvi/PyMCF/blob/master/tutorial_mcf.ipynb"> tutorial_mcf.ipynb </a> <span class="project_lang">Python</span>
+                <p> This tutorial shows how the Python MCF implementation can be used to analyze retention and monetization in a censored data set, compare different cohorts, extrapolate to the future, and generalize retention and monetization metrics to real valued data such as total playtime and Lifetime Value (LTV).</p>
+             </li>
+             <li><a href="https://github.com/majuvi/PyMCF/blob/master/tutorial_regression.ipynb"> tutorial_regression.ipynb </a> <span class="project_lang">R</span>
+                <p> The Python MCF implementation does not yet support regression, so we show to use the recurrent event formulation and purchase amounts with the R 'survival' and 'lm' packages for purchases and sessions.</p>
+             </li>
+             <li><a href="https://github.com/majuvi/PyMCF/blob/master/nelson_examples.ipynb"> nelson_examples.ipynb </a> <span class="project_lang">Python</span>
+                <p> The Python MCF implementation can replicate every example and exercise in Wayne Nelson's book "Recurrent Events Data Analysis for Product Repairs, Disease Recurrences, and Other Applications".</p>
+             </li>
+            </ul>
+            <h2 class="project_subtitle">Related papers</h2>
+          <ol class="project_references">
+              <li>Viljanen, M., Airola, A., Majanoja, A. M., Heikkonen, J., &amp; Pahikkala, T. (2020). Measuring player retention and monetization using the mean cumulative function. IEEE Transactions on Games, 12(1), 101-114. <a href="https://ieeexplore.ieee.org/abstract/document/8950075/">link</a>.</li>
+              <li>Viljanen, M., Airola, A., Heikkonen, J., &amp; Pahikkala, T. (2017). A/B-test of retention and monetization using the Cox model. In Thirteenth Artificial Intelligence and Interactive Digital Entertainment Conference. <a href="https://aaai.org/ocs/index.php/AIIDE/AIIDE17/paper/view/15816">link</a>.</li>
+              <li>Viljanen, M., Airola, A., Heikkonen, J., &amp; Pahikkala, T. (2017). Playtime measurement with survival analysis. IEEE Transactions on Games, 10(2), 128-138. <a href="https://ieeexplore.ieee.org/abstract/document/7982656/">link</a>.</li>
+          </ol>
+        </section>
+
+        <section id="project_p2p" class="project">
+            <h1 class="project_title">Predicting Profits in P2P Lending</h1>
+            <figure>
+                <img class="project_img" src="img/p2p.png" alt="Example where the defaults and recoveries are estimated from censored P2P lending data"/>
+                <figcaption class="project_caption"> Figure: The expected monthly payment in new loans cannot be estimated without bias from censored data (left). It is possible to develop a default model (middle) and loss given default (right) model, which imply the monthly loan payments and therefore the profit using DCF analysis. </figcaption>
+            </figure>
+            <p>
+                P2P lending is a new and increasingly popular approach to finance, where individuals lend money to other individuals through an online platform. These loans can have very high interest rates, but they also have very high default rates and no collateral that would insure the recovery of principal. Investors want to predict the expected profit in each loan, which can be done with Discounted CashFlow (DCF) analysis on the monthly loan payments. However, many of the loans were made recently and they have several years of duration: this means we do not know the all of the monthly payments because the follow-up ended. Is it then really possible to predict the profit in these loans? In the paper, we invented a new model that makes it possible to predict profits even in censored data based on complementary 1) default model 2) loss given default model. 
+            </p>
+            <h2 class="project_subtitle">Software</h2>
+            <ul class="project_repos">
+                <li> <a href="https://github.com/majuvi/P2Plending"> <span class="project_repo">https://github.com/majuvi/P2Plending </span></a></li>
+            </ul>
+
+            <h2 class="project_subtitle">Vignette</h2>
+            <ul class="project_examples">
+             <li><a href="https://github.com/majuvi/P2Plending/blob/master/P2P_tutorial_python.ipynb"> P2P_tutorial_python.ipynb </a> <span class="project_lang">Python</span>
+                <p> In the papers we applied the methods to the publically available Bondora data set. This tutorial shows how to download and process the data, apply the default and loss given default models, predict profits from these two models, and buy secondary market loans.</p>
+             </li>
+             <li><a href="https://github.com/majuvi/P2Plending/blob/master/P2P_regression_R.ipynb"> P2P_regression_R.ipynb </a> <span class="project_lang">R</span>
+                <p> We present very briefly an alternative R implementation of the models because they can be fitted without regularization and with the log-link in the loss given default model.</p>
+             </li>
+            </ul>
+            <h2 class="project_subtitle">Related papers</h2>
+            <ol class="project_references">
+                <li>Viljanen, M., Byanjankar, A., &amp; Pahikkala, T. (2020). Predicting Profitability of Peer-to-Peer Loans with Recovery Models for Censored Data. In International Conference on Intelligent Decision Technologies (pp. 15-25). Springer, Singapore. <a href="https://link.springer.com/chapter/10.1007/978-981-15-5925-9_2">link</a>.</li>
+                <li>Byanjankar, A., &amp; Viljanen, M. (2020). Predicting expected profit in ongoing peer-to-peer loans with survival analysis-based profit scoring. In Intelligent Decision Technologies 2019 (pp. 15-26). Springer, Singapore.<a href="https://link.springer.com/chapter/10.1007/978-981-13-8311-3_2">link</a>.</li>
+          </ol>
+        </section>
+          
+        <section id="project_gamerec" class="project">
+            <h1 class="project_title">Game Recommendation in Different Settings</h1>
+            <figure>
+                <img class="project_img" src="img/mvn.png" alt="Example of different settings of game recommendations"/>
+                <figcaption class="project_caption"> Figure:  Illustration of an explicit data set of game ratings (left) and the corresponding implicit data set of game playing status
+                    (middle). The MVN predicts the 'missing interactions' (#) for a given player conditional on the complete interaction matrix (0/1) for other players (right). </figcaption>
+            </figure>
+            <p>
+                Game recommendation is an interesting application of recommender systems because many platforms have gathered data sets of player and game interactions, often with features that describe the players or the games. While collaborative filtering has been shown to produce the most accurate recommendations, it cannot be applied to games or players that have no interactions in the training set. However, new games appear all the time and new players come to a platform where they have not played any of their games. For this reason, we divide the task to four settings depending on whether recommendations are required for new games and/or new players, and develop four new models to provide the most accurate and useful recomendations in each.
+            </p>
+            <h2 class="project_subtitle">Software</h2>
+            <ul class="project_repos">
+                <li> <a href="https://github.com/majuvi/game_recommendation"> <span class="project_repo">https://github.com/majuvi/game_recommendation </span></a></li>
+            </ul>
+
+            <h2 class="project_subtitle">Vignette</h2>
+            <ul class="project_examples">
+             <li><a href="https://github.com/majuvi/game_recommendation/blob/master/game_recommendation.ipynb"> game_recommendation.ipynb </a> <span class="project_lang">Python</span>
+                <p> This notebook shows a Python implementation of the models in our paper with somewhat more elaborate results. We show how simple it is to apply each of the models and how the results can be modified to get recommendations that are qualitatively better.</p>
+             </li>
+            </ul>
+            <h2 class="project_subtitle">Related papers</h2>
+            <ol class="project_references">
+                <li>Viljanen, M., & Pahikkala, T. (2020). New Recommendation Algorithm for Implicit Data Motivated by the Multivariate Normal Distribution. arXiv preprint arXiv:2012.11480. <a href="https://arxiv.org/abs/2012.11480">link</a></li>
+                <li>Viljanen, M., Pahikkala, T., Vahlo, J., &amp; Koponen, A. (2020). Content Based Player and Game Interaction Model for Game Recommendation in the Cold Start setting. arXiv preprint arXiv:2009.08947. <a href="https://arxiv.org/pdf/2009.08947.pdf">link</a>.</li>
+            </ol>
+        </section>
+
+        <section id="project_unemployment" class="project">
+            <h1 class="project_title">Predicting Individual's Unemployment</h1>
+            <figure>
+                <img class="project_img" src="img/markov.png" alt="Example where unemployment is a stochastic process determined by entry and exit rates"/>
+                <figcaption class="project_caption"> Figure: Unemployment can be formulated as a stochastic process determined by individual's entry and exit rates. We can use this with machine learning to predict the unemployment to the future. </figcaption>
+            </figure>
+            <p>
+                Unemployment is an important research in both macroeconometric labour market statistics and microecometric studies on the determinants of individual unemployment. Unemployment is a natural prediction target for machine learning, with the unemployment registries providing an extensive source of data. In this paper, we apply machine learning to predict individual's risk of: 1) unemployment prevalence 2) unemployment entry 3) unemployment exit. In fact, we can describe the individual's entire unemployment experience as a stochastic process predicted by the models, under certain assumptions. From the stochastic process, we can predict that every individual has a certain lifetime prevalence of unemployment that occurs in the long run. 
+            </p>
+            <h2 class="project_subtitle">Software</h2>
+            <ul class="project_repos">
+                <li> <a href="https://github.com/majuvi/unemployment"> <span class="project_repo">https://github.com/majuvi/unemployment </span></a></li>
+            </ul>
+
+            <h2 class="project_subtitle">Vignette</h2>
+            <ul class="project_examples">
+             <li><a href="https://github.com/majuvi/unemployment/blob/master/unemployment.ipynb"> unemployment.ipynb </a> <span class="project_lang">Python</span>
+                <p> In the paper we applied Python and R models to an unemployment registry data set. Here we show a simple Python implementation of our three models for unemployment prevalence, entry, and exit. We also show how the stochastic process can be used to predict even more accurately to the near future.</p>
+             </li>
+            </ul>
+            <h2 class="project_subtitle">Related papers</h2>
+            <ol class="project_references">
+                <li>Viljanen, M., &amp; Pahikkala, T. (2020). Predicting Unemployment with Machine Learning Based on Registry Data.  In Research Challenges in Information Science: 14th International Conference, RCIS 2020, Limassol, Cyprus, September 23–25, 2020, Proceedings 14 (pp. 352-368). Springer International Publishing. <a href="https://link.springer.com/chapter/10.1007/978-3-030-50316-1_21">link</a>.</li>
+            </ol>
+        </section>
+        
+        <section id="project_percentage" class="project">
+            <h1 class="project_title">Predicting Monetization Percentage in Semisupervised Data Sets</h1>
+            <figure>
+                <img class="project_img" src="img/data_simulated.png" alt="Example where the monetization rate is estimated from censored and unlabelled data"/>
+                <figcaption class="project_caption"> Figure: 'Cured indicator' is the purchasing and non-purchasing players, but 'Censored indicator' shows how the limited follow-up prevents knowing the true status of every player (red/blue). </figcaption>
+            </figure>
+            <p>
+                Many games today are free-to-play (F2P), which is a business model where the game itseful is free but game developers make money from advertisements, premium upgrades, and in-app purchases. For this reason, it is very important to understand how many players convert to paying players (monetize) and why the do so. If we have historical data sets with many years of follow-up, we can calculate how many players monetized and train a standard machine learning model. However, in real time analytics the follow-ups are limited and we do not know who the monetizing players are because they have not yet made a purchase. Can we somehow predict the monetizing players if the data set is effectively unlabelled? In the paper, we show that this is indeed possible! 
+            </p>
+            <h2 class="project_subtitle">Software</h2>
+            <ul class="project_repos">
+                <li> <a href="https://github.com/majuvi/cureEM"> <span class="project_repo">https://github.com/majuvi/cureEM </span></a></li>
+            </ul>
+
+            <h2 class="project_subtitle">Vignette</h2>
+            <ul class="project_examples">
+             <li><a href="https://github.com/majuvi/cureEM/blob/master/monetization_percentage.ipynb"> monetization_percentage.ipynb </a> <span class="project_lang">R</span>
+                <p> We show how to predict the monetization percentage and rate with a mixture cure model fitted with the Expectation Maximization (EM) algorithm to a simulated data set.</p>
+             </li>
+            </ul>
+            <h2 class="project_subtitle">Related papers</h2>
+            <ol class="project_references">
+                <li>Numminen, R., Viljanen, M., &amp; Pahikkala, T. (2020). Bayesian Inference for Predicting the Monetization Percentage in Free-to-Play Games. IEEE Transactions on Games, 14(1), 13-22. <a href="https://ieeexplore.ieee.org/abstract/document/9160858">link</a>.</li>
+                <li>Numminen, R., Viljanen, M., &amp; Pahikkala, T. (2019). Predicting the monetization percentage with survival analysis in free-to-play games. In 2019 IEEE Conference on Games (CoG) (pp. 1-8). IEEE. <a href="https://ieeexplore.ieee.org/abstract/document/8848045">link</a>.</li>
+            </ol>
+        </section>
+
+ </body>
+</html>
+
