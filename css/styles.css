@@ -80,9 +80,45 @@ a {
 	font-style: oblique;
 }
 
-.project_repo {
+.container {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+  }
+
+.profile_img {
+	width: 30%;
 }
 
+.quote {
+	font-size: 1.5rem;
+	font-style: oblique;
+    text-align:center;
+    color:#000080;
+    margin-left: 3rem;
+    margin-right: 3rem;
+	width: 70%;
+}
+
+.quote {
+	font-size: 1.5rem;
+	font-style: oblique;
+    text-align:center;
+    color:#000080;
+    margin-left: 3rem;
+    margin-right: 3rem;
+	width: 70%;
+}
+
+.art{
+	font-size: 1.2rem;
+	font-style: oblique;
+    text-align:center;
+    color:#000080;
+}
+	
 @media screen and (min-width: 50rem) {
 	
 	.navbar {
@@ -91,6 +127,10 @@ a {
 	.navbar_home {
 		flex: 1;
 	   }
+
+	.container {
+		flex-flow: row nowrap;
+	}
 
 	main {
 		border-left: 4px solid #F0F0F0;
